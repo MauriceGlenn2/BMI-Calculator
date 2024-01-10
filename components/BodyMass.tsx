@@ -12,7 +12,7 @@ const BodyMass: FC<BodyMassProps> = ({}) => {
   
   return (
     <div
-      className="flex flex-col items-center h-[640px]
+      className="flex flex-col items-center h-[640px] 
       bg-gradient-to-l from-[#D6E6FE] to-transparent outline-none
     flex-shrink-0 border border-none rounded-b-3xl border-[#B3D3F1]"
     >
@@ -22,9 +22,10 @@ const BodyMass: FC<BodyMassProps> = ({}) => {
           icon="game-icons:abstract-082"
         />
       </div>
-      <div className="flex flex-col items-center w-[328px] gap-[24px]">
+      <div className="flex flex-col items-center w-[328px] gap-[24px] md:w-[686px]">
         <h1 className="text-center font-semibold leading-[52.8px] tracking-[-2.4px] text-[48px] font-inter">
-          Body Mass Index Calculator
+          Body Mass
+          <br /> Index Calculator
         </h1>
         <p className="text-center text-[16px] font-normal leading-[24px] text-[#5E6E85] font-inter pb-12">
           Better understand your weight in relation to your height using our
@@ -33,7 +34,7 @@ const BodyMass: FC<BodyMassProps> = ({}) => {
           your overall health and well-being.
         </p>
       </div>
-      <div className="border-none rounded-xl shadow-custom w-[328px] flex-col gap-6 bg-white">
+      <div className="border-none rounded-xl shadow-custom w-[328px] flex-col gap-6 bg-white md:w-[686px]">
         <div className="p-[24px]">
           <h1 className="font-inter text-2xl font-semibold tracking-[-1.2px] pb-[24px]">
             Enter your details below
@@ -50,30 +51,32 @@ const BodyMass: FC<BodyMassProps> = ({}) => {
               <p className="font-inter text-base font-semibold">Imperial</p>
             </div>
           </div>
-          <div className="pt-6">
-            <p className="leading-[21px] text-sm pb-2">Height</p>
-            <div className="flex items-start relative">
-              <input
-                className="w-full rounded-md pl-6 pr-14 py-5 text-2xl border border-[#D8E2E7]
+          <div className="md:flex md:gap-6">
+            <div className="pt-6">
+              <p className="leading-[21px] text-sm pb-2">Height</p>
+              <div className="flex items-start relative">
+                <input
+                  className="w-full rounded-md pl-6 pr-14 py-5 text-2xl border border-[#D8E2E7]
                  flex items-start focus:outline-none "
-                type="text"
-              />
-              <span className="text-2xl pr-6 font-semibold text-[#345FF6] tracking-[-1.2px] items-center justify-center flex absolute transform translate-y-1/2 right-0">
-                cm
-              </span>
+                  type="text"
+                />
+                <span className="text-2xl pr-6 font-semibold text-[#345FF6] tracking-[-1.2px] items-center justify-center flex absolute transform translate-y-1/2 right-0">
+                  cm
+                </span>
+              </div>
             </div>
-          </div>
-          <div className="pt-4 pb-6">
-            <p className="leading-[21px] text-sm pb-2">Weight</p>
-            <div className="flex items-start relative">
-              <input
-                className="w-full rounded-md pl-6 pr-14 py-5 text-2xl border border-[#D8E2E7]
+            <div className="pt-4 pb-4 ">
+              <p className="leading-[21px] text-sm pb-2">Weight</p>
+              <div className="flex items-start relative">
+                <input
+                  className="w-full rounded-md pl-6 pr-14 py-5 text-2xl border border-[#D8E2E7]
                 flex items-start focus:outline-none"
-                type="text"
-              />
-              <span className="text-2xl pr-6 font-semibold text-[#345FF6] tracking-[-1.2px] items-center justify-center flex absolute transform translate-y-1/2 right-0">
-                kg
-              </span>
+                  type="text"
+                />
+                <span className="text-2xl pr-6 font-semibold text-[#345FF6] tracking-[-1.2px] items-center justify-center flex absolute transform translate-y-1/2 right-0">
+                  kg
+                </span>
+              </div>
             </div>
           </div>
           <div
