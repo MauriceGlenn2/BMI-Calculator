@@ -1,11 +1,18 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { Icon } from "@iconify/react";
 
 
-interface BodyMassProps {}
+interface BodyMassProps {
+  blue?: boolean;
+}
 
 const BodyMass: FC<BodyMassProps> = ({}) => {
+const [isRadioSelected, setRadioSelected] = useState(false);
 
+function handleRadioChange() {
+  setRadioSelected(!isRadioSelected);
+  console.log("clicked");
+}
 
 
 
@@ -39,19 +46,28 @@ const BodyMass: FC<BodyMassProps> = ({}) => {
           <h1 className="font-inter text-2xl font-semibold tracking-[-1.2px] pb-[24px]">
             Enter your details below
           </h1>
-          <div className="flex items-center gap-[18px]">
-            <div className="flex  items-center gap-6">
-              <div className="bg-white p-4 rounded-full shadow-md relative">
+
+          <div className="flex items-center gap-6">
+            <div className="flex items-center md:w-[50%]">
+              <div className="bg-white p-4 rounded-full shadow-md relative cursor-pointer"
+              onClick={handleRadioChange}>
                 <div className="h-4 w-4 bg-blue-500 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
               </div>
-              <p className="font-inter text-base font-semibold">Metric</p>
-              <div className="bg-white p-4 rounded-full shadow-md relative ">
+              <p className="font-inter text-base font-semibold pl-[18px]">
+                Metric
+              </p>
+            </div>
+            <div className="flex items-center md:w-[50%]">
+              <div className="bg-white p-4 rounded-full shadow-md relative cursor-pointer">
                 <div className="h-4 w-4 bg-blue-500 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
               </div>
-              <p className="font-inter text-base font-semibold">Imperial</p>
+              <p className="font-inter text-base font-semibold pl-[18px]">
+                Imperial
+              </p>
             </div>
           </div>
-          <div className="md:flex md:gap-6">
+
+          <div className="md:flex md:gap-6 ">
             <div className="pt-6">
               <p className="leading-[21px] text-sm pb-2">Height</p>
               <div className="flex items-start relative">
@@ -65,7 +81,7 @@ const BodyMass: FC<BodyMassProps> = ({}) => {
                 </span>
               </div>
             </div>
-            <div className="pt-4 pb-4 ">
+            <div className="pt-6">
               <p className="leading-[21px] text-sm pb-2">Weight</p>
               <div className="flex items-start relative">
                 <input
@@ -80,19 +96,27 @@ const BodyMass: FC<BodyMassProps> = ({}) => {
             </div>
           </div>
           <div
-            className="p-8 flex flex-col rounded-2xl
-            bg-gradient-to-r from-[#345FF6] to-[#587DFF] w-full  border"
+            className="p-8 mt-6 gap-6 flex flex-col rounded-2xl
+            bg-gradient-to-r from-[#345FF6] to-[#587DFF] w-full  border
+            md:rounded-r-full"
           >
-            <p className="text-white font-semibold leading-6 font-inter pb-2">
-              Your BMI is...
-            </p>
-            <h1 className="font-inter text-white text-[48px] font-semibold tracking-[-2.4px ] leading-[52.8px]">
-              23.4
-            </h1>
-            <p className="pt-6 text-white font-inter text-sm font-normal leading-[21px]">
-              Your BMI suggests you’re a healthy weight. Your ideal weight is
-              between <span className="font-bold">63.3kgs - 85.2kgs.</span>
-            </p>
+            <div className="md:gap-6 md:flex md:justify-center md:items-center md:self-stretch">
+              <div className="md:w-[50%]">
+                <p className="text-white font-semibold leading-6 font-inter pb-2">
+                  Your BMI is...
+                </p>
+                <h1 className="font-inter text-white text-[48px] font-semibold tracking-[-2.4px ] leading-[52.8px]">
+                  23.4
+                </h1>
+              </div>
+              <div className="md:w-[50%]">
+                <p className=" text-white font-inter text-sm font-normal leading-[21px]">
+                  Your BMI suggests you’re a healthy weight. Your ideal weight
+                  is between{" "}
+                  <span className="font-bold">63.3kgs - 85.2kgs.</span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
